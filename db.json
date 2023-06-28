@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "firstName": "sumit",
+      "userName": "sumit",
+      "lastname": "patil",
+      "Email": "javascriptiscoolstuff@gmail.com",
+      "Departments": "Electrical",
+      "Userrole": "STAFF",
+      "phoneNumber": "1234567890",
+      "password": "Patil@44",
+      "id": 1
+    },
+    {
+      "firstName": "ganesh",
+      "userName": "ganesh",
+      "lastname": "patil",
+      "Email": "patil2sumit@gmail.com",
+      "Departments": "Information Tecnology",
+      "Userrole": "HOD",
+      "phoneNumber": "1236458799",
+      "password": "Patil@44",
+      "id": 2
+    },
+    {
+      "firstName": "vishal",
+      "userName": "vishal",
+      "lastname": "Pati",
+      "Email": "javascriptiscoolstuff@gmail.com",
+      "Departments": "Electrical",
+      "Userrole": "HOD",
+      "phoneNumber": "1111111111",
+      "password": "Patil@44",
+      "id": 3
+    }
+  ],
+  "LeaveAppl": [
+    {
+      "startdate": "2023-06-05T18:30:00.000Z",
+      "enddate": "2023-06-11T18:30:00.000Z",
+      "reason": "ddsfd",
+      "LeaveStatus": "Approved",
+      "StaffName": "sumit",
+      "id": 1,
+      "leaveDays": 7
+    },
+    {
+      "startdate": "2023-06-12T18:30:00.000Z",
+      "enddate": "2023-06-10T18:30:00.000Z",
+      "reason": "cvbcv",
+      "LeaveStatus": "Approved",
+      "StaffName": "sumit",
+      "id": 2,
+      "leaveDays": -1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

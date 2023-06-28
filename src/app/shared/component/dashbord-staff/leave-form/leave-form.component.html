@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-sm-6 offset-sm-3 m-4">
+    <mat-card>
+      <!-- <div class="row"> -->
+      <div class="p-4">
+        <form [formGroup]="LeaveForm" (ngSubmit)="LeaveSubmt()">
+          <div class="card">
+            <div class="card-header">
+              <h3>Leave Details</h3>
+            </div>
+            <div class="card-body">
+              <div class="datePeaker">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <mat-form-field color="accent">
+                      <mat-label>Form</mat-label>
+                      <div class="form-group">
+                        <input matInput [matDatepicker]="picker1" formControlName="startdate" />
+                      </div>
+                      <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                      <mat-datepicker-toggle
+                        matIconSuffix
+                        [for]="picker1"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-sm-6">
+                    <mat-form-field color="accent">
+                      <mat-label>To</mat-label>
+                      <div class="form-group">
+                        <input matInput [matDatepicker]="picker2" formControlName="enddate"/>
+                      </div>
+                      <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                      <mat-datepicker-toggle
+                        matIconSuffix
+                        [for]="picker2"
+                      ></mat-datepicker-toggle>
+                      <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <mat-label class="mr-2">Reason</mat-label>
+                  <div class="form-group">
+                    <textarea name="" id="" cols="30" rows="5" formControlName="reason"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-right">
+              <button  class="btn btn-info mr-2" type="button">cancel</button>
+              <button [disabled]="LeaveForm.invalid" routerLink="StaffSec" class="btn btn-primary">submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- </div> -->
+    </mat-card>
+  </div>
+</div>

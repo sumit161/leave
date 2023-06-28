@@ -1,0 +1,81 @@
+<div class="date" *ngIf="applyLeavearr.length === 0">
+  <div>
+    <h1 class="text-danger">Not applied any leave yet</h1>
+  </div>
+  <div >
+    <button color="primary" mat-raised-button (click)="OpenDialogBox()">
+      + Apply Leave
+    </button>
+  </div>
+</div>
+
+<div class="col-sm-12 my-4" *ngIf="applyLeavearr.length > 0">
+  <div class="my-4">
+    <button color="primary" mat-raised-button (click)="OpenDialogBox()">
+      + Apply Leave
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>
+        <strong>
+          <h1>{{ TotalLeaves }}</h1>
+          <h3>TotalLeaves</h3></strong
+        >
+      </p>
+    </div>
+    <div class="col-sm-3">
+      <p>
+        <strong>
+          <h1>{{ TotalApproved }}</h1>
+          <h3>Approved</h3></strong
+        >
+      </p>
+    </div>
+    <div class="col-sm-3">
+      <p>
+        <strong>
+          <h1>{{ TotalRejected }}</h1>
+          <h3>Rejected</h3></strong
+        >
+      </p>
+    </div>
+    <div class="col-sm-3">
+      <p>
+        <strong>
+          <h1>{{ TotalPending }}</h1>
+          <h3>Pending</h3></strong
+        >
+      </p>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-sm-6 p-4" *ngFor="let item of applyLeavearr">
+        <mat-card [ngClass]="{'green':item.LeaveStatus==='Approved' ,'red':item.LeaveStatus==='Rejected' }">
+          <mat-card-content>
+            <h3>
+              <strong> {{ item.StaffName }}</strong>
+            </h3>
+          </mat-card-content>
+          <mat-card-content>
+            <span
+              >Leave from <strong>{{ item.startdate | date }}</strong>
+            </span>
+            <span>
+              to <strong>{{ item.enddate | date }}</strong>
+            </span>
+            <p class="m-1">
+              Number Of Days <strong> {{ item.leaveDays }}</strong>
+            </p>
+            <p>
+              Reason :<strong>{{ item.reason }}</strong>
+            </p>
+          </mat-card-content>
+          <mat-card-content>
+            {{ item.LeaveStatus }}
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+</div>

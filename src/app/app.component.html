@@ -1,0 +1,9 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<div class="loader" *ngIf="IslogIn">
+  <div class="spinner-border text-success" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>

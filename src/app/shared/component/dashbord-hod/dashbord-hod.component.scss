@@ -1,0 +1,35 @@
+.mat-card {
+  padding-right: 20px;
+}
+.leave {
+  display: block;
+}
+// .leave {
+//   height: 255px;
+// }
+.leaveStatus {
+  color: red;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  height: 90vh;
+}
+.green{
+  color:green
+}
+.mat-icon{
+  font-size: 30px;
+
+}
+.mat-card{
+  border-radius: 20px;
+  border: 2px solid blue;
+
+}
+.greenColor{
+  border: 2px solid green;
+  }
+  .redColor{
+  border: 2px solid red;
+  }

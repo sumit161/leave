@@ -1,0 +1,162 @@
+<div class="leaveStatus" *ngIf="staffLeave.length === 0">
+  <h1>No Leave Request Available</h1>
+</div>
+
+<!-- 1st part approved rejected -->
+<div
+  class="col-sm-12 d-flex flex-column offset-sm-1 m-4"
+  *ngIf="staffLeave.length > 0"
+>
+ <!--  <ul class="list-group" *ngFor="let item of emp">
+    <ng-container  *ngIf="item.gender==='male'">
+      <li class="list-group-item">{{ item.name }}</li>
+    </ng-container>
+  </ul> -->
+
+
+    <div class="row">
+      <div class="col-sm-6 pt-4" *ngFor="let item of staffLeave">
+        <!-- <h1 class="text-center">Staff member who applied leave</h1> -->
+        <ng-container>
+          <!-- *ngIf="item.LeaveStatus === 'Pending'" -->
+          <mat-card  class="leave my-4">
+            <mat-card-content >
+              <h3>
+                <strong> {{ item.StaffName }}</strong>
+              </h3>
+            </mat-card-content>
+            <mat-card-content>
+              <span
+                >Leave from <strong>{{ item.startdate | date }}</strong>
+              </span>
+              <span>
+                to <strong>{{ item.enddate | date }}</strong>
+              </span>
+              <p class="m-1">
+                Number Of Days <strong> {{ item.leaveDays }}</strong>
+              </p>
+              <p>
+                Reason :<strong>{{ item.reason }}</strong>
+              </p>
+            </mat-card-content>
+            <mat-card-content>
+                <!-- *ngIf="item.LeaveStatus == 'Pending'" -->
+                <button
+                  class="btn btn-success mr-2"
+                  (click)="OnReplay('Approved', item)"
+                  [ngClass]="{ hide: true }"
+                >
+                  Approved
+                </button>
+                <button
+                  class="btn btn-danger"
+                  (click)="OnReplay('Rejected', item)"
+                >
+                  Reject
+                </button>
+            <!--   <ng-container *ngIf="item.LeaveStatus === 'Approved'">
+                <div class="row"></div>
+              </ng-container>
+              <ng-container *ngIf="item.LeaveStatus === 'Rejected'">
+                <div class="row"></div>
+              </ng-container> -->
+            </mat-card-content>
+          </mat-card>
+        </ng-container>
+      </div>
+      <!-- 2nd section -->
+    </div>
+    <div class="row">
+      <div class="col-sm-6 pt-4" *ngFor="let item of updatedArr">
+        <mat-card class="my-4">
+          <!-- [ngClass]="{'greenColor': item.LeaveStatus==='Approved','redColor': item.LeaveStatus==='Rejected'}" -->
+          <mat-card-content >
+            <h3>
+              <strong> {{ item.StaffName }}</strong>
+            </h3>
+          </mat-card-content>
+          <mat-card-content >
+            <span
+              >Leave from <strong>{{ item.startdate | date }}</strong>
+            </span>
+            <span>
+              to <strong>{{ item.enddate | date }}</strong>
+            </span>
+            <p class="m-1">
+              Number Of Days <strong> {{ item.leaveDays }}</strong>
+            </p>
+            <p>
+              Reason :<strong>{{ item.reason }}</strong>
+            </p>
+          </mat-card-content>
+          <mat-card-content >
+            <div class="" *ngIf="item.LeaveStatus === 'Approved'">
+              <mat-icon class="green">check</mat-icon>
+              <div class="col-sm-3 text-success font">
+                {{ AfterClickbuttonApproved }}
+              <!--   {{item.LeaveStatus}} -->
+              </div>
+            </div>
+            <div class="" *ngIf="item.LeaveStatus === 'Rejected'">
+              <mat-icon color="warn">close</mat-icon>
+              <div class="col-sm-3 text-danger font">
+                {{ AfterClickbuttonRejecteed }}
+                <!-- second  {{item.LeaveStatus}} -->
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+</div>
+
+<!-- 2nd part approved rejected -->
+
+<!--
+<div class="col-sm-10 offset-sm-1 m-4">
+  <mat-card>
+    <div class="row">
+      <div class="col-sm-6 p-4">
+        <div class="card leave" *ngFor="let item of updatedArr">
+          <div class="card-header">
+            <h3><strong> {{item.StaffName}}</strong></h3>
+          </div>
+          <div class="card-body">
+            <span>Leave from <strong>{{item.startdate | date}}</strong> </span>
+            <span> to <strong>{{item.enddate | date}}</strong> </span>
+            <p class="m-1">Number Of Days <strong> {{item.leaveDays}}</strong></p>
+            <p>Reason :<strong>{{item.reason}}</strong></p>
+          </div>
+          <div class="card-header">
+            {{item.LeaveStatus}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
+-->
+
+<!-- <div class="col-sm-10 offset-sm-1 m-4">
+  <mat-card>
+    <div class="row">
+      <div class="col-sm-6 p-4">
+        <div class="card">
+          <div class="card-header">
+            <h3>sumit</h3>
+          </div>
+          <div class="card-body">
+            <p>Leave for 12 April 2023</p>
+            <p>Number of Days</p>
+            <p>Reason</p>
+          </div>
+          <div class="card-header">
+            Approved or
+            Reject
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div> -->

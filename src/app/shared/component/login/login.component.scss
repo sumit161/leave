@@ -1,0 +1,68 @@
+.main {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #efe4f0;
+  // background-image: url('https://img.freepik.com/free-vector/gradient-network-connection-background_23-2148865393.jpg?w=1060&t=st=1686550649~exp=1686551249~hmac=ef1ad0da64dba2f0e0dd17cce4e30d8b8e98b136fd023f03954a1869ed11aff9');
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  .form {
+    width: 600px;
+  }
+}
+
+.input-group-text{
+  cursor: pointer;
+}
+
+/* .example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+} */
+
+.example-full-width {
+  width: 100%;
+}
+.mat-card{
+  padding-right: 20px;
+}
+
+
+// signup
+.formSection {
+  width: 100%;
+  // height: 500px;
+  background-color: white;
+  margin-top: 50px ;
+  padding: 20px;
+  // padding-bottom: 50px;
+
+
+}
+.subtitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.underline,.subtitle{
+  border-bottom: 2px solid gray;
+}
+
+.mat-raised-button{
+  background-color: #AAA3ff;
+  color:black
+}
+.mt{
+  margin-top: 50px;
+}
+.danger{
+  color: red;
+}
+.mat-form-field{
+  width: 100%;
+}
+

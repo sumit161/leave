@@ -1,0 +1,19 @@
+
+  <div class="row">
+      <div class="col-sm-6 p-4"  *ngFor="let item of applyLeavearr">
+        <mat-card>
+          <mat-card-content>
+            <h3><strong> {{item.StaffName}}</strong></h3>
+          </mat-card-content>
+          <mat-card-content>
+            <span>Leave from <strong>{{item.startdate | date}}</strong> </span>
+            <span> to <strong>{{item.enddate |date}}</strong> </span>
+            <p class="m-1">Number Of Days <strong> {{item.leaveDays}}</strong></p>
+            <p>Reason :<strong>{{item.reason}}</strong></p>
+          </mat-card-content>
+          <mat-card-content>
+            {{item.LeaveStatus}}
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>

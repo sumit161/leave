@@ -1,0 +1,54 @@
+
+<mat-dialog-content>
+  <form [formGroup]="LeaveForm" (ngSubmit)="LeaveSubmit()">
+      <div class="row">
+          <div class="col-sm-10">
+              <h2>Leave Details</h2>
+
+          </div>
+          <div class="col-sm-2">
+              <mat-icon (click)="closedDialog()">close</mat-icon>
+          </div>
+
+      </div>
+      <div class="row">
+          <div class="col-sm-6">
+              <mat-form-field color="accent" class="date-form">
+                  <mat-label>Form</mat-label>
+                    <input matInput [matDatepicker]="picker1" formControlName="startdate" />
+                  <mat-datepicker-toggle
+                    matIconSuffix
+                    [for]="picker1"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+              <mat-form-field color="accent" class="date-form">
+                  <mat-label>To</mat-label>
+
+                    <input matInput [matDatepicker]="picker2" formControlName="enddate"/>
+                  <mat-datepicker-toggle
+                    matIconSuffix
+                    [for]="picker2"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                </mat-form-field>
+          </div>
+      </div>
+      <div class="row">
+          <mat-form-field>
+              <mat-label>Reason</mat-label>
+              <textarea formControlName="reason" matInput></textarea>
+            </mat-form-field>
+      </div>
+      <!-- <mat-dialog-actions> -->
+        <div class="text-right">
+          <button class="mr-2" mat-raised-button color="basic" type="button" (click)="closedDialog()">close</button>
+          <button [disabled]="LeaveForm.invalid" mat-raised-button type="submit" (click)="closedDialog()" color="primary" routerLink="StaffSec">Submit</button>
+      </div>
+      <!-- </mat-dialog-actions> -->
+  </form>
+</mat-dialog-content>
+
+<!-- [disabled]="LeaveForm.invalid" -->

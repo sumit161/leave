@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg p-3 navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button appNavbarhideshow  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto mb-2 mb-lg-0 subLi">
+        <li class="nav-item" routerLinkActive="active" *ngIf="accessFor==='HOD'"  [routerLinkActiveOptions]="{exact:true}">
+        <!-- <li class="nav-item" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}"> -->
+          <a class="nav-link " aria-current="page" routerLink="HodSec">Hod Section</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" *ngIf="accessFor==='STAFF'"  [routerLinkActiveOptions]="{exact:true}">
+        <!-- <li class="nav-item" routerLinkActive="active"   [routerLinkActiveOptions]="{exact:true}"> -->
+          <a class="nav-link " aria-current="page" routerLink="StaffSec">Staff Section</a>
+        </li>
+   <!--      <li class="nav-item" routerLinkActive="active" *ngIf="accessFor==='STAFF'"  [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link " aria-current="page" routerLink="signup">Section</a>
+        </li> -->
+      </ul>
+      <ul  class="navbar-nav ml-auto mb-2 mb-lg-0 ">
+        <li>
+          <button  type="button" mat-raised-button   routerLink="" (click)="Onlogout()">Log out</button>
+       </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- *ngIf="accessFor==='HOD'"
+*ngIf="accessFor==='STAFF'" -->
